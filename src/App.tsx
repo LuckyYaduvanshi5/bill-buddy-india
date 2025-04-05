@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import GroupsPage from "./pages/GroupsPage";
 import GroupDetailPage from "./pages/GroupDetailPage";
 import AddExpensePage from "./pages/AddExpensePage";
+import CreateGroupPage from "./pages/CreateGroupPage";
 import ActivityPage from "./pages/ActivityPage";
 import BalancesPage from "./pages/BalancesPage";
 import ProfilePage from "./pages/ProfilePage";
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/groups" element={<GroupsPage />} />
           <Route path="/groups/:groupId" element={<GroupDetailPage />} />
           <Route path="/add" element={<AddExpensePage />} />
+          <Route path="/create-group" element={<CreateGroupPage />} />
           <Route path="/activity" element={<ActivityPage />} />
           <Route path="/balances" element={<BalancesPage />} />
           <Route path="/profile" element={<ProfilePage />} />

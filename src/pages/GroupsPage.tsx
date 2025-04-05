@@ -4,13 +4,14 @@ import { PageHeader } from "@/components/header/page-header";
 import { GroupCard } from "@/components/groups/group-card";
 import { mockGroups } from "@/lib/mock-data";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
 import { Search, Plus, Filter } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const GroupsPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
   
   const filteredGroups = mockGroups.filter(group =>
     group.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -34,13 +35,13 @@ const GroupsPage = () => {
           <Button 
             size="icon" 
             variant="outline" 
-            onClick={() => toast.info("Filters coming soon!")}
+            onClick={() => navigate("/filters")}
           >
             <Filter className="h-4 w-4" />
           </Button>
           <Button 
             size="icon" 
-            onClick={() => toast.info("Create group coming soon!")}
+            onClick={() => navigate("/create-group")}
             className="bg-brand-blue hover:bg-brand-blue/90"
           >
             <Plus className="h-4 w-4" />
@@ -60,7 +61,7 @@ const GroupsPage = () => {
               {searchQuery ? "Try a different search term" : "You haven't created any groups yet"}
             </p>
             <Button 
-              onClick={() => toast.info("Create group coming soon!")}
+              onClick={() => navigate("/create-group")}
               className="bg-brand-blue hover:bg-brand-blue/90"
             >
               <Plus className="h-4 w-4 mr-2" />

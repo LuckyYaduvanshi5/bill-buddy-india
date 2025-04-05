@@ -1,0 +1,21 @@
+
+{
+  "name": "Bill Buddy India",
+  "short_name": "Bill Buddy",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/lovable-uploads/9847c9cf-f02c-4e42-b7b2-e7636e4eb49f.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/lovable-uploads/9847c9cf-f02c-4e42-b7b2-e7636e4eb49f.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
