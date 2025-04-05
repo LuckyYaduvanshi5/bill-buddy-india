@@ -6,7 +6,8 @@ const Index = () => {
   const navigate = useNavigate();
   
   useEffect(() => {
-    navigate("/");
+    // Navigate to the home page
+    navigate("/", { replace: true });
   }, [navigate]);
   
   return (
