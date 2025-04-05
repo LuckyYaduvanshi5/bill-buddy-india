@@ -146,7 +146,7 @@ export function AddExpenseForm({ groupId }: AddExpenseFormProps) {
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
-              <SelectItem value="">No group</SelectItem>
+              <SelectItem value="no-group">No group</SelectItem>
               {mockGroups.map((group) => (
                 <SelectItem key={group.id} value={group.id}>
                   {group.emoji} {group.name}
