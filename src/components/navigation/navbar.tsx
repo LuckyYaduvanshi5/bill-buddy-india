@@ -49,20 +49,33 @@ export function Navbar() {
           key={item.name}
           to={item.href}
           className={cn(
-            "flex flex-col items-center px-3 py-2 rounded-md transition-colors",
-            location.pathname === item.href
-              ? "text-primary"
-              : "text-muted-foreground hover:text-foreground"
+            "flex flex-col items-center px-3 py-1",
+            item.name === "Add" ? "relative" : ""
           )}
         >
-          <item.icon
-            size={24}
-            className={cn(
-              item.name === "Add" && "text-brand-blue p-0.5",
-              item.name === "Add" && location.pathname === item.href && "text-brand-blue",
-            )}
-          />
-          <span className="text-xs mt-1">{item.name}</span>
+          {item.name === "Add" ? (
+            <div className="absolute -top-5 bg-brand-blue text-white rounded-full p-3 shadow-lg">
+              <item.icon size={20} />
+            </div>
+          ) : (
+            <item.icon
+              size={24}
+              className={cn(
+                "transition-colors",
+                location.pathname === item.href
+                  ? "text-brand-blue"
+                  : "text-muted-foreground"
+              )}
+            />
+          )}
+          <span className={cn(
+            "text-xs mt-1",
+            location.pathname === item.href
+              ? "text-brand-blue font-medium"
+              : "text-muted-foreground"
+          )}>
+            {item.name}
+          </span>
         </Link>
       ))}
     </nav>
